@@ -55,4 +55,17 @@ public class StatsService {
         }
         return belowAverageMonthCounter;
     }
+
+    //Метод расчета количества месяцев, в которых продажи были выше среднего
+    public int getAboveAverageMonthCount(long[] monthSalesArray) {
+        int aboveAverageMonthCounter = 0;
+        long averageSales = getAverageSales(monthSalesArray);
+
+        for (long monthSales : monthSalesArray) {
+            if (monthSales > averageSales) {
+                aboveAverageMonthCounter++;
+            }
+        }
+        return aboveAverageMonthCounter;
+    }
 }
