@@ -31,7 +31,7 @@ public class StatsService {
     }
 
     //Метод расчета номера месяца, в котором был минимум продаж
-    public int getMinSalesMonthNumber(long monthSalesArray[]) {
+    public int getMinSalesMonthNumber(long[] monthSalesArray) {
         int minMonthSalesNumber = 0;
 
         for (int i = 0; i < monthSalesArray.length; i++) {
@@ -44,7 +44,7 @@ public class StatsService {
     }
 
     //Метод расчета количества месяцев, в которых продажи были ниже среднего
-    public int getBelowAverageMonthCount(long monthSalesArray[]) {
+    public int getBelowAverageMonthCount(long[] monthSalesArray) {
         int belowAverageMonthCounter = 0;
         long averageSales = getAverageSales(monthSalesArray);
 
