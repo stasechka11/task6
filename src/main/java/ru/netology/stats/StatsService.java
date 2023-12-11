@@ -42,4 +42,17 @@ public class StatsService {
 
         return minMonthSalesNumber + 1;
     }
+
+    //Метод расчета количества месяцев, в которых продажи были ниже среднего
+    public int getBelowAverageMonthCount(long monthSalesArray[]) {
+        int belowAverageMonthCounter = 0;
+        long averageSales = getAverageSales(monthSalesArray);
+
+        for (long monthSales : monthSalesArray) {
+            if (monthSales < averageSales) {
+                belowAverageMonthCounter++;
+            }
+        }
+        return belowAverageMonthCounter;
+    }
 }

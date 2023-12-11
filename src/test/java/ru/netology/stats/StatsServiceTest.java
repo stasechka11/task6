@@ -51,4 +51,16 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedMaxSales, actualMaxSales);
     }
+
+    @Test
+    public void shouldFindBelowAverageMonthCount() {
+        StatsService statsService = new StatsService();
+
+        long[] monthSalesArray = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedMaxSales = 5;
+        int actualMaxSales = statsService.getBelowAverageMonthCount(monthSalesArray);
+
+        Assertions.assertEquals(expectedMaxSales, actualMaxSales);
+    }
 }
