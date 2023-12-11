@@ -18,15 +18,28 @@ public class StatsService {
     }
 
     //Метод расчета номера месяца, в котором был пик продаж
-    public int getMaxSales(long[] monthSalesArray) {
-        int maxMonth = 0;
+    public int getMaxSalesMonthNumber(long[] monthSalesArray) {
+        int maxSalesMonthNumber = 0;
 
         for (int i = 0; i < monthSalesArray.length; i++) {
-            if (monthSalesArray[i] >= monthSalesArray[maxMonth]) {
-                maxMonth = i;
+            if (monthSalesArray[i] >= monthSalesArray[maxSalesMonthNumber]) {
+                maxSalesMonthNumber = i;
             }
         }
 
-        return maxMonth + 1;
+        return maxSalesMonthNumber + 1;
+    }
+
+    //Метод расчета номера месяца, в котором был минимум продаж
+    public int getMinSalesMonthNumber(long monthSalesArray[]) {
+        int minMonthSalesNumber = 0;
+
+        for (int i = 0; i < monthSalesArray.length; i++) {
+            if (monthSalesArray[i] <= monthSalesArray[minMonthSalesNumber]) {
+                minMonthSalesNumber = i;
+            }
+        }
+
+        return minMonthSalesNumber + 1;
     }
 }
